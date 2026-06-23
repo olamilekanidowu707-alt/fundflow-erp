@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-colors cursor-pointer;
+  }
+  .sidebar-link.active {
+    @apply bg-brand-50 text-brand-600 font-medium;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium border transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white border-brand-600 hover:bg-brand-800;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-gray-700 border-gray-200 hover:bg-gray-50;
+  }
+  .btn-success {
+    @apply btn bg-green-700 text-white border-green-700 hover:bg-green-800;
+  }
+  .btn-danger {
+    @apply btn bg-white text-red-700 border-red-300 hover:bg-red-50;
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 overflow-hidden;
+  }
+  .input {
+    @apply w-full rounded-lg border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600 focus:border-transparent;
+  }
+  .label {
+    @apply block text-xs font-medium text-gray-600 mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium border;
+  }
+  .stat-card {
+    @apply bg-gray-50 rounded-xl p-4;
+  }
+}
