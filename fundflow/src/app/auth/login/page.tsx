@@ -17,8 +17,7 @@ export default function LoginPage() {
     setError('')
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) { setError(error.message); setLoading(false); return }
-    router.refresh()
-router.push('/dashboard')
+    window.location.href = '/dashboard'
   }
 
   return (
